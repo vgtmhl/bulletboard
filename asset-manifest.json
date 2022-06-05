@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/bulletboard/static/css/main.56170b2b.css",
+    "main.js": "/bulletboard/static/js/main.ca414a7b.js",
+    "index.html": "/bulletboard/index.html",
+    "main.56170b2b.css.map": "/bulletboard/static/css/main.56170b2b.css.map",
+    "main.ca414a7b.js.map": "/bulletboard/static/js/main.ca414a7b.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.56170b2b.css",
+    "static/js/main.ca414a7b.js"
+  ]
+}
