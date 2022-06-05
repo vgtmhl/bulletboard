@@ -13,21 +13,24 @@ const postsSlice = createSlice({
     initialState,
     reducers: {
         /**
-         * If you need to customize the creation of the payload value of an action creator by means of a prepare callback, the value of the appropriate field of the reducers argument object should be an object instead of a function. This object must contain two properties: reducer and prepare. The value of the reducer field should be the case reducer function while the value of the prepare field should be the prepare callback function:
+         * If you need to customize the creation of the payload value of an action creator by means of a prepare callback, 
+         * the value of the appropriate field of the reducers argument object should be an object instead of a function. 
+         * This object must contain two properties: reducer and prepare. 
+         * 
+         * The value of the reducer field should be the case reducer function.
+         * The value of the prepare field should be the prepare callback function:
          */
         postAdded: {
             reducer(state, action: PayloadAction<Post>) {
                 state.push(action.payload)
             },
-            /**
-             * "prepare" functions are used to transform the action payload before it is dispatched to the reducer.
-             */
-            prepare(title: string, content: string) {
+            prepare(title: string, content: string, userId: string) {
                 return {
                     payload: {
                         id: nanoid(),
                         title,
-                        content
+                        content,
+                        userId
                     }
                 }
             }
