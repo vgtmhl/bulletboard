@@ -1,5 +1,6 @@
-import { createSlice, nanoid } from "@reduxjs/toolkit";
+import { createSlice, nanoid, PayloadAction } from "@reduxjs/toolkit";
 import { RootState } from "../../store";
+import { Post } from "./postModels";
 
 const initialState = [
     { id: '1', title: 'Learning Redux toolkit', content: "I've heard good things about Redux Toolkit" },
@@ -12,11 +13,10 @@ const postsSlice = createSlice({
     initialState,
     reducers: {
         postAdded: {
-            reducer(state, action) {
+            reducer(state, action: PayloadAction<Post>) {
                 state.push(action.payload)
             },
-            /** Type "any" here because honestly I have no idea wtf TS is complaining about */
-            prepare(title: string, content: string): any {
+            prepare(title: string, content: string) {
                 return {
                     payload: {
                         id: nanoid(),
